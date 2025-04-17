@@ -7,35 +7,34 @@
   body {
     font-family: Arial, sans-serif;
     background-color: #5c2a2a;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     padding: 20px;
   }
   
+  /* Mobile-first: layout empilhado */
   .container {
-    display: flex;
-    flex-direction: row;
-    width: 800px;
-    max-width: 100%;
-    height: 480px;
+    width: 100%;
+    max-width: 480px;
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
   }
   
   /* Login Section */
   .login-section {
-    flex: 1;
-    padding: 40px;
     background-color: #fff;
+    padding: 30px 20px;
   }
   
   .login-section h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 25px;
   }
   
   .login-section label {
@@ -77,16 +76,15 @@
   
   /* Info Section */
   .info-section {
-    flex: 1;
     background-color: #3c3f4a;
     color: white;
-    padding: 30px;
     text-align: center;
+    padding: 30px 20px;
   }
   
   .info-section h1 {
     font-style: italic;
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 20px;
   }
   
@@ -112,25 +110,25 @@
     font-weight: bold;
   }
   
-  /* Responsivo para celulares */
-  @media (max-width: 768px) {
+  /* Layout para telas maiores */
+  @media (min-width: 769px) {
     .container {
-      flex-direction: column;
-      height: auto;
+      flex-direction: row;
+      max-width: 800px;
+      height: 480px;
     }
   
     .login-section, .info-section {
-      width: 100%;
-      padding: 30px 20px;
+      flex: 1;
+      padding: 40px;
     }
   
     .info-section h1 {
-      font-size: 24px;
+      font-size: 28px;
     }
   
     .update-img {
-      max-height: 200px;
-      object-fit: cover;
+      height: auto;
     }
   }
   
